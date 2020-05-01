@@ -1,0 +1,45 @@
+---
+title: "Campus Placement EDA"
+author: 'Group 11: Alvin, Josef, Steven, Nadya, Maximilian'
+date: "5/1/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Background
+Academic and Employability Factors influencing campus placement Job placement has always been a mystery, a blackbox if one may say, as there are countless possibilities of how an employer may assess a candidate, moreover in how the quality factors a candidate possesses. It is evident that source university is insufficient as a predictor to truly understand why some receive placement and others don’t. Therefore, given that students graduate from an identical university, we would like to dive deeper into the inward factors that behave as strong predictors regarding job placement. We hope the findings will be valuable for universities, to adequately prepare its students for the job market, and for students, to best prepare themselves for the job-searching massacre amidst the rapidly deprecating economy due to the mischievous COVID-19.
+
+## Looking into the Dataset
+This data set consists of Placement data of students in Jain University Bangalore. It includes secondary and higher secondary school percentages and specialization. It also includes degree specialization, type and Work experience and salary offers to the placed students
+
+```{r head}
+placement.df.raw <- read.csv("placement_data.csv", 
+                             colClasses = c("integer", 
+                                            rep(c("factor", "numeric"), 2), 
+                                            rep(c("factor", "factor", "numeric"), 2),
+                                            "factor", "numeric", "factor", "integer"))
+head(placement.df.raw)
+summary(placement.df.raw)
+```
+* sl_no: serial number
+* gender: Gender- Male='M',Female='F'
+* ssc_p: Secondary Education percentage- 10th Grade
+* ssc_b: Board of Education- Central/ Others (10th Grade)
+* hsc_p: Higher Secondary Education percentage- 12th Grade
+* hsc_b: Board of Education- Central/ Others (12th Grade)
+* hsc_s: Specialization in Higher Secondary Education
+* degree_p: Degree Percentage
+* degree_t: Under Graduation(Degree type)- Field of degree education
+* workex: Work Experience
+* etest_p: Employability test percentage ( conducted by college)
+* specialisation: Post Graduation(MBA)- Specialization
+* mba_p: MBA percentage
+* status: Status of placement- Placed/Not placed
+* salary: Salary offered by corporate to candidates
+
+\pagebreak
+## Data Visualization
+
